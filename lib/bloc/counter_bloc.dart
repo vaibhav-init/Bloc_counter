@@ -10,14 +10,12 @@ class CounterBloc extends Bloc<CounterEvents, CounterStates> {
     on<NumberDecrease>(onNumberDecrease);
   }
 
-  void onNumberIncrease(
-      NumberIncrease event, Emitter<CounterStates> emit) async {
+  void onNumberIncrease(NumberIncrease event, Emitter<CounterStates> emit) {
     counter = counter + 1;
     emit(UpdateState(counter: counter));
   }
 
-  void onNumberDecrease(
-      NumberDecrease event, Emitter<CounterStates> emit) async {
+  void onNumberDecrease(NumberDecrease event, Emitter<CounterStates> emit) {
     counter = counter - 1;
     emit(UpdateState(counter: counter));
   }
